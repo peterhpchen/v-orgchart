@@ -2,8 +2,16 @@
   <table class="v-layer">
     <tr>
       <td>
-        <v-node>
-          <slot/>
+        <v-node
+          :node-data="nodeData"
+        >
+          <template
+            slot-scope="props"
+          >
+            <slot
+              :node-data="props.nodeData"
+            />
+          </template>
         </v-node>
       </td>
     </tr>
@@ -15,6 +23,13 @@
         <v-layer
           :node-data="node"
         >
+          <template
+            slot-scope="_"
+          >
+            <slot
+              :node-data="_.nodeData"
+            />
+          </template>
         </v-layer>
       </td>
     </tr>

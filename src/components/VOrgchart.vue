@@ -3,7 +3,15 @@
     <v-layer
       :node-data="data"
     >
-      <slot/>
+      <template
+        slot-scope="data"
+      >
+        <slot
+          :node-data="data"
+        >
+          <div>{{nodeData.name}}</div>
+        </slot>
+      </template>
     </v-layer>
   </div>
 </template>
