@@ -1,42 +1,25 @@
 <template>
   <div id="app">
-    <!-- <v-orgchart
+    <v-orgchart
       :data="data"
     >
-    </v-orgchart> -->
-    <v-layer
-      :node-data="data"
-    >
-      <template
+      <!-- <template
         slot-scope="slotProps"
       >
-        <div class="name">{{slotProps.nodeData.name}}</div>
-      </template>
-    </v-layer>
-    <!-- <v-node
-      :node-data="data"
-    >
-      <template
-        slot-scope="slotProps"
-      >
-        <div class="name">{{slotProps.nodeData.name}}</div>
         <div class="name">{{slotProps.nodeData.id}}</div>
-      </template>
-    </v-node> -->
+        <div class="name">{{slotProps.nodeData.name}}</div>
+      </template> -->
+    </v-orgchart>
   </div>
 </template>
 
 <script>
 import VOrgchart from './components/VOrgchart';
-import VLayer from './components/VLayer';
-import VNode from './components/VNode';
 
 export default {
   name: 'App',
   components: {
     VOrgchart,
-    VLayer,
-    VNode,
   },
   data() {
     return {

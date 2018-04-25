@@ -4,12 +4,12 @@
       :node-data="data"
     >
       <template
-        slot-scope="data"
+        slot-scope="props"
       >
         <slot
-          :node-data="data"
+          :node-data="props.nodeData"
         >
-          <div>{{nodeData.name}}</div>
+          <div class="name">{{props.nodeData.name}}</div>
         </slot>
       </template>
     </v-layer>

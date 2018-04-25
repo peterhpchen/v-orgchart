@@ -2,9 +2,7 @@
   <div class="node">
       <slot
         :node-data="nodeData"
-      >
-        <div class="name">{{nodeData.name}}</div>
-      </slot>
+      />
   </div>
 </template>
 
