@@ -37,6 +37,9 @@ describe('VNode.vue', () => {
       propsData: {
         nodeData: data,
       },
+      scopedSlots: {
+        default: '<div class="name" slot-scope="props">{{props.nodeData.name}}</div>',
+      },
     });
     expect(wrapper.html()).toMatchSnapshot();
   });
