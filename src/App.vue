@@ -3,12 +3,16 @@
     <v-orgchart
       :data="data"
     >
-      <!-- <template
+      <template
         slot-scope="slotProps"
       >
         <div class="name">{{slotProps.nodeData.id}}</div>
-        <div class="name">{{slotProps.nodeData.name}}</div>
-      </template> -->
+        <div
+          class="name"
+          @click="clickName(slotProps.nodeData.name)">
+          {{slotProps.nodeData.name}}
+        </div>
+      </template>
     </v-orgchart>
   </div>
 </template>
@@ -48,6 +52,11 @@ export default {
         ],
       },
     };
+  },
+  methods: {
+    clickName(name) {
+      console.log(`click ${name}`);
+    },
   },
 };
 </script>
