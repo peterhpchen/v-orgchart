@@ -3,13 +3,13 @@
     <tr>
       <td>
         <v-node
-          :node-data="nodeData"
+          :data="data"
         >
           <template
-            slot-scope="props"
+            slot-scope="_"
           >
             <slot
-              :node-data="props.nodeData"
+              :data="_.data"
             />
           </template>
         </v-node>
@@ -17,17 +17,17 @@
     </tr>
     <tr class="nodes">
       <td
-        v-for="(node, index) in nodeData.children"
+        v-for="(node, index) in data.children"
         :key="key(node, index)"
       >
         <v-layer
-          :node-data="node"
+          :data="node"
         >
           <template
             slot-scope="_"
           >
             <slot
-              :node-data="_.nodeData"
+              :data="_.data"
             />
           </template>
         </v-layer>
@@ -45,7 +45,7 @@ export default {
     VNode,
   },
   props: {
-    nodeData: {
+    data: {
       type: Object,
       required: true,
     },

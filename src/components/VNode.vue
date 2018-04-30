@@ -1,7 +1,7 @@
 <template>
   <div class="node">
       <slot
-        :node-data="nodeData"
+        :data="data"
       />
   </div>
 </template>
@@ -9,7 +9,7 @@
 <script>
 export default {
   props: {
-    nodeData: {
+    data: {
       type: Object,
       required: true,
     },

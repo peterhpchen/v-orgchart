@@ -1,15 +1,15 @@
 <template>
   <div class="v-orgchart">
     <v-layer
-      :node-data="data"
+      :data="data"
     >
       <template
-        slot-scope="props"
+        slot-scope="_"
       >
         <slot
-          :node-data="props.nodeData"
+          :data="_.data"
         >
-          <div class="name">{{props.nodeData.name}}</div>
+          <div class="name">{{ _.data.name }}</div>
         </slot>
       </template>
     </v-layer>
