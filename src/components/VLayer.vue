@@ -15,7 +15,10 @@
         </v-node>
       </td>
     </tr>
-    <tr class="nodes">
+    <tr
+      v-if="data.children && data.children.length > 0"
+      class="nodes"
+    >
       <td
         v-for="(node, index) in data.children"
         :key="key(node, index)"
