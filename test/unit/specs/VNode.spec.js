@@ -2,7 +2,7 @@ import { shallow } from '@vue/test-utils';
 import VNode from '@/components/VNode';
 
 describe('VNode.vue', () => {
-  it('should match snapshot', () => {
+  it('match snapshot', () => {
     const node = {
       name: 'A',
     };

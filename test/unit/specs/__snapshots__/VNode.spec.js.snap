@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`VNode.vue should match snapshot 1`] = `
+exports[`VNode.vue match snapshot 1`] = `
 <div class="node">
     <div class="name">A</div>
 </div>
