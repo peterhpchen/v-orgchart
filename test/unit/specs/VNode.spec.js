@@ -1,4 +1,3 @@
-// import Vue from 'vue';
 import { shallow } from '@vue/test-utils';
 import VNode from '@/components/VNode';
 
@@ -10,10 +9,10 @@ describe('VNode.vue', () => {
 
     const wrapper = shallow(VNode, {
       propsData: {
-        nodeData: node,
+        data: node,
       },
       scopedSlots: {
-        default: '<div class="name" slot-scope="props">{{props.nodeData.name}}</div>',
+        default: '<div class="name" slot-scope="slotProps">{{ slotProps.data.name }}</div>',
       },
     });
     expect(wrapper.html()).toMatchSnapshot();
