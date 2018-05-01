@@ -15,6 +15,8 @@
         </v-node>
       </td>
     </tr>
+    <tr class="lines"></tr>
+    <tr class="lines"></tr>
     <tr
       v-if="data.children && data.children.length > 0"
       class="nodes"
