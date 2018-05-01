@@ -59,7 +59,6 @@ describe('VLayer.vue', () => {
 
       expect(wrapper.contains('tr:last-child.nodes')).toBeTruthy();
     });
-
   });
 
   describe('given a data without children property', () => {
@@ -75,6 +74,19 @@ describe('VLayer.vue', () => {
       });
 
       expect(wrapper.contains('.nodes')).toBeFalsy();
+    });
+    it('does not have any lines tr', () => {
+      const node = {
+        name: 'A',
+      };
+
+      const wrapper = shallow(VLayer, {
+        propsData: {
+          data: node,
+        },
+      });
+
+      expect(wrapper.contains('.lines')).toBeFalsy();
     });
   });
 });
