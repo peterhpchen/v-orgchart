@@ -16,9 +16,11 @@
       </td>
     </tr>
     <tr
+      v-if="data.children && data.children.length > 0"
       class="lines"
     />
     <tr
+      v-if="data.children && data.children.length > 0"
       class="lines"
     />
     <tr
