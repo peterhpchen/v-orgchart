@@ -1,13 +1,14 @@
 <template>
   <div class="node">
-      <slot
-        :data="data"
-      />
+    <slot
+      :data="data"
+    />
   </div>
 </template>
 
 <script>
 export default {
+  name: 'VNode',
   props: {
     data: {
       type: Object,

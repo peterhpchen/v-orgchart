@@ -6,11 +6,11 @@
       <template
         slot-scope="slotProps"
       >
-        <div class="name">{{slotProps.data.id}}</div>
+        <div class="name">{{ slotProps.data.id }}</div>
         <div
           class="name"
           @click="clickName(slotProps.data.name)">
-          {{slotProps.data.name}}
+          {{ slotProps.data.name }}
         </div>
       </template>
     </v-orgchart>

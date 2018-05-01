@@ -15,8 +15,12 @@
         </v-node>
       </td>
     </tr>
-    <tr class="lines"></tr>
-    <tr class="lines"></tr>
+    <tr
+      class="lines"
+    />
+    <tr
+      class="lines"
+    />
     <tr
       v-if="data.children && data.children.length > 0"
       class="nodes"
@@ -45,7 +49,7 @@
 import VNode from './VNode';
 
 export default {
-  name: 'v-layer',
+  name: 'VLayer',
   components: {
     VNode,
   },

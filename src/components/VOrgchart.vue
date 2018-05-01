@@ -20,7 +20,7 @@
 import VLayer from './VLayer';
 
 export default {
-  name: 'v-orgchart',
+  name: 'VOrgchart',
   components: {
     VLayer,
   },
