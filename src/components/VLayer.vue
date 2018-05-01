@@ -15,35 +15,36 @@
         </v-node>
       </td>
     </tr>
-    <tr
-      v-if="data.children && data.children.length > 0"
-      class="lines"
-    />
-    <tr
-      v-if="data.children && data.children.length > 0"
-      class="lines"
-    />
-    <tr
-      v-if="data.children && data.children.length > 0"
-      class="nodes"
+    <template
+      v-if="isHaveChild"
     >
-      <td
-        v-for="(node, index) in data.children"
-        :key="key(node, index)"
+      <tr
+        class="lines"
+      />
+      <tr
+        class="lines"
+      />
+      <tr
+        class="nodes"
       >
-        <v-layer
-          :data="node"
+        <td
+          v-for="(node, index) in data.children"
+          :key="key(node, index)"
         >
-          <template
-            slot-scope="_"
+          <v-layer
+            :data="node"
           >
-            <slot
-              :data="_.data"
-            />
-          </template>
-        </v-layer>
-      </td>
-    </tr>
+            <template
+              slot-scope="_"
+            >
+              <slot
+                :data="_.data"
+              />
+            </template>
+          </v-layer>
+        </td>
+      </tr>
+    </template>
   </table>
 </template>
 
@@ -59,6 +60,11 @@ export default {
     data: {
       type: Object,
       required: true,
+    },
+  },
+  computed: {
+    isHaveChild() {
+      return this.data.children && this.data.children.length > 0;
     },
   },
   methods: {
