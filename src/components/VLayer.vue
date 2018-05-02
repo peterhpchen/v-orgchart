@@ -20,7 +20,11 @@
     >
       <tr
         class="lines"
-      />
+      >
+        <td>
+          <div class="downline"/>
+        </td>
+      </tr>
       <tr
         class="lines"
       />
