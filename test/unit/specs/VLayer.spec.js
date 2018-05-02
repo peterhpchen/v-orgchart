@@ -22,7 +22,7 @@ describe('VLayer.vue', () => {
       expect(wrapper.contains('tr:nth-child(2).lines')).toBeTruthy();
     });
 
-    it('has downline in the second row', () => {
+    it('has downLine in the second row', () => {
       const node = {
         name: 'A',
         children: [
@@ -41,7 +41,7 @@ describe('VLayer.vue', () => {
       expect(wrapper.contains('tr:nth-child(2) > td > div.downLine')).toBeTruthy();
     });
 
-    it('has rightline in the first td of the third tr', () => {
+    it('has rightLine in the first td of the third tr', () => {
       const node = {
         name: 'A',
         children: [
@@ -58,6 +58,24 @@ describe('VLayer.vue', () => {
       });
 
       expect(wrapper.contains('tr:nth-child(3) > td:first-child.rightLine')).toBeTruthy();
+    });
+    it('has leftLine in the last td of the third tr', () => {
+      const node = {
+        name: 'A',
+        children: [
+          {
+            name: 'B',
+          },
+        ],
+      };
+
+      const wrapper = shallow(VLayer, {
+        propsData: {
+          data: node,
+        },
+      });
+
+      expect(wrapper.contains('tr:nth-child(3) > td:last-child.leftLine')).toBeTruthy();
     });
 
     it('has lines tr in the third row', () => {
