@@ -46,6 +46,33 @@ describe('VLayer.vue', () => {
     });
   });
 
+  describe('given a data with children', () => {
+    it('has twice td of number of children in the third row', () => {
+      const node = {
+        name: 'A',
+        children: [
+          {
+            name: 'B',
+          },
+          {
+            name: 'C',
+          },
+          {
+            name: 'D',
+          },
+        ],
+      };
+
+      const wrapper = shallow(VLayer, {
+        propsData: {
+          data: node,
+        },
+      });
+
+      expect(wrapper.findAll('tr:nth-child(3).lines > td').length).toBe(node.children.length * 2);
+    });
+  });
+
   describe('given a data without children property', () => {
     it('does not have any nodes tr', () => {
       const node = {
