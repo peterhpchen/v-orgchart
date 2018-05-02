@@ -22,12 +22,14 @@
         class="lines"
       >
         <td>
-          <div class="downline"/>
+          <div class="downLine"/>
         </td>
       </tr>
       <tr
         class="lines"
-      />
+      >
+        <td class="rightLine"/>
+      </tr>
       <tr
         class="nodes"
       >
