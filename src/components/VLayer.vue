@@ -29,6 +29,7 @@
         class="lines"
       >
         <td class="rightLine"/>
+        <td class="leftLine"/>
       </tr>
       <tr
         class="nodes"
