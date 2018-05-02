@@ -2,7 +2,7 @@ import { shallow } from '@vue/test-utils';
 import VLayer from '@/components/VLayer';
 
 describe('VLayer.vue', () => {
-  describe('given a data with children property', () => {
+  describe('given a data with single child', () => {
     it('has lines tr in the second row', () => {
       const node = {
         name: 'A',
@@ -38,7 +38,26 @@ describe('VLayer.vue', () => {
         },
       });
 
-      expect(wrapper.contains('tr:nth-child(2) > td > div.downline')).toBeTruthy();
+      expect(wrapper.contains('tr:nth-child(2) > td > div.downLine')).toBeTruthy();
+    });
+
+    it('has rightline in the first td of the third tr', () => {
+      const node = {
+        name: 'A',
+        children: [
+          {
+            name: 'B',
+          },
+        ],
+      };
+
+      const wrapper = shallow(VLayer, {
+        propsData: {
+          data: node,
+        },
+      });
+
+      expect(wrapper.contains('tr:nth-child(3) > td:first-child.rightLine')).toBeTruthy();
     });
 
     it('has lines tr in the third row', () => {
