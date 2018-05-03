@@ -47,8 +47,11 @@ describe('VLayer.vue', () => {
   });
 
   describe('given a data with children', () => {
-    it('has twice td of number of children in the third row', () => {
-      const node = {
+    let wrapper;
+    let node;
+
+    beforeEach(() => {
+      node = {
         name: 'A',
         children: [
           {
@@ -63,91 +66,30 @@ describe('VLayer.vue', () => {
         ],
       };
 
-      const wrapper = shallow(VLayer, {
+      wrapper = shallow(VLayer, {
         propsData: {
           data: node,
         },
       });
+    });
 
+    it('has twice td of number of children in the third row', () => {
       expect(wrapper.findAll('tr:nth-child(3).lines > td').length).toBe(node.children.length * 2);
     });
 
     it('has rightLine in the odd td in the third row', () => {
-      const node = {
-        name: 'A',
-        children: [
-          {
-            name: 'B',
-          },
-          {
-            name: 'C',
-          },
-          {
-            name: 'D',
-          },
-        ],
-      };
-
-      const wrapper = shallow(VLayer, {
-        propsData: {
-          data: node,
-        },
-      });
-
       const oddTd = wrapper.findAll('tr:nth-child(3).lines > td:nth-child(odd)');
 
       expect(oddTd.filter(w => w.classes().includes('rightLine')).length).toBe(oddTd.length);
     });
 
     it('has leftLine in the even td in the third row', () => {
-      const node = {
-        name: 'A',
-        children: [
-          {
-            name: 'B',
-          },
-          {
-            name: 'C',
-          },
-          {
-            name: 'D',
-          },
-        ],
-      };
-
-      const wrapper = shallow(VLayer, {
-        propsData: {
-          data: node,
-        },
-      });
-
       const evenTd = wrapper.findAll('tr:nth-child(3).lines > td:nth-child(even)');
 
       expect(evenTd.filter(w => w.classes().includes('leftLine')).length).toBe(evenTd.length);
     });
 
     it('has topLine except the first and the last td in the third row', () => {
-      const node = {
-        name: 'A',
-        children: [
-          {
-            name: 'B',
-          },
-          {
-            name: 'C',
-          },
-          {
-            name: 'D',
-          },
-        ],
-      };
-
-      const wrapper = shallow(VLayer, {
-        propsData: {
-          data: node,
-        },
-      });
-
       const topLineTd = wrapper.findAll('tr:nth-child(3).lines > td.topLine');
       const tdExceptFirstAndLast = wrapper.findAll('tr:nth-child(3).lines > td:not(:first-child):not(:last-child)');
 
