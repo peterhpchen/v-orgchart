@@ -96,6 +96,10 @@ describe('VLayer.vue', () => {
 
       expect(topLineTd.length).toBe(tdExceptFirstAndLast.length);
     });
+
+    it('has td of number of children in the last row', () => {
+      expect(wrapper.findAll('tr:last-child.nodes > td').length).toBe(node.children.length);
+    });
   });
 
   describe('given a data without children property', () => {
