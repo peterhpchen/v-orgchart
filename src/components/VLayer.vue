@@ -31,7 +31,7 @@
         <td
           v-for="n in data.children.length * 2"
           :key="n"
-          :class="line(n)"
+          :class="lineClassObject(n)"
         />
       </tr>
       <tr
@@ -81,8 +81,9 @@ export default {
     key(node, index) {
       return node.id || index;
     },
-    line(number) {
+    lineClassObject(number) {
       return {
+        topLine: number != 1 && number != this.data.children.length * 2,
         rightLine: !this.isEven(number),
         leftLine: this.isEven(number),
       };
