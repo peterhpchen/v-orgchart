@@ -125,6 +125,34 @@ describe('VLayer.vue', () => {
 
       expect(evenTd.filter(w => w.classes().includes('leftLine')).length).toBe(evenTd.length);
     });
+
+    it('has topLine except the first and the last td in the third row', () => {
+      const node = {
+        name: 'A',
+        children: [
+          {
+            name: 'B',
+          },
+          {
+            name: 'C',
+          },
+          {
+            name: 'D',
+          },
+        ],
+      };
+
+      const wrapper = shallow(VLayer, {
+        propsData: {
+          data: node,
+        },
+      });
+
+      const topLineTd = wrapper.findAll('tr:nth-child(3).lines > td.topLine');
+      const tdExceptFirstAndLast = wrapper.findAll('tr:nth-child(3).lines > td:not(:first-child):not(:last-child)');
+
+      expect(topLineTd.length).toBe(tdExceptFirstAndLast.length);
+    });
   });
 
   describe('given a data without children property', () => {
