@@ -71,6 +71,33 @@ describe('VLayer.vue', () => {
 
       expect(wrapper.findAll('tr:nth-child(3).lines > td').length).toBe(node.children.length * 2);
     });
+
+    it('has rightLine in the odd td in the third row', () => {
+      const node = {
+        name: 'A',
+        children: [
+          {
+            name: 'B',
+          },
+          {
+            name: 'C',
+          },
+          {
+            name: 'D',
+          },
+        ],
+      };
+
+      const wrapper = shallow(VLayer, {
+        propsData: {
+          data: node,
+        },
+      });
+
+      const oddTd = wrapper.findAll('tr:nth-child(3).lines > td:nth-child(odd)');
+
+      expect(oddTd.length).toBe(oddTd.filter(w => w.classes().includes('rightLine')).length);
+    });
   });
 
   describe('given a data without children property', () => {
