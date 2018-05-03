@@ -1,5 +1,6 @@
-import { shallow } from '@vue/test-utils';
+import { shallow, mount } from '@vue/test-utils';
 import VLayer from '@/components/VLayer';
+import VNode from '@/components/VNode';
 
 describe('VLayer.vue', () => {
   describe('given a data with single child', () => {
@@ -111,6 +112,7 @@ describe('VLayer.vue', () => {
 
       expect(wrapper.contains('.nodes')).toBeFalsy();
     });
+
     it('does not have any lines tr', () => {
       const node = {
         name: 'A',
@@ -123,6 +125,20 @@ describe('VLayer.vue', () => {
       });
 
       expect(wrapper.contains('.lines')).toBeFalsy();
+    });
+
+    it('has v-node component in the first row', () => {
+      const node = {
+        name: 'A',
+      };
+
+      const wrapper = mount(VLayer, {
+        propsData: {
+          data: node,
+        },
+      });
+
+      expect(wrapper.find('tr:first-child > td > *').find(VNode).is(VNode)).toBeTruthy();
     });
   });
 });
