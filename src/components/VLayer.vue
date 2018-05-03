@@ -83,10 +83,13 @@ export default {
     },
     line(number) {
       return {
-        rightLine: number === 1,
+        rightLine: !this.isEven(number),
         leftLine: number === this.data.children.length * 2,
       };
     },
+    isEven(number){
+      return number % 2 === 0;
+    }
   },
 };
 </script>
