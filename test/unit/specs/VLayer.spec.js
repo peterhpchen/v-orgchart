@@ -96,7 +96,34 @@ describe('VLayer.vue', () => {
 
       const oddTd = wrapper.findAll('tr:nth-child(3).lines > td:nth-child(odd)');
 
-      expect(oddTd.length).toBe(oddTd.filter(w => w.classes().includes('rightLine')).length);
+      expect(oddTd.filter(w => w.classes().includes('rightLine')).length).toBe(oddTd.length);
+    });
+
+    it('has leftLine in the even td in the third row', () => {
+      const node = {
+        name: 'A',
+        children: [
+          {
+            name: 'B',
+          },
+          {
+            name: 'C',
+          },
+          {
+            name: 'D',
+          },
+        ],
+      };
+
+      const wrapper = shallow(VLayer, {
+        propsData: {
+          data: node,
+        },
+      });
+
+      const evenTd = wrapper.findAll('tr:nth-child(3).lines > td:nth-child(even)');
+
+      expect(evenTd.filter(w => w.classes().includes('leftLine')).length).toBe(evenTd.length);
     });
   });
 
