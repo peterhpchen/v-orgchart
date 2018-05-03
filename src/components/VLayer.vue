@@ -28,8 +28,11 @@
       <tr
         class="lines"
       >
-        <td class="rightLine"/>
-        <td class="leftLine"/>
+        <td
+          v-for="n in data.children.length * 2"
+          :key="n"
+          :class="line(n)"
+        />
       </tr>
       <tr
         class="nodes"
@@ -77,6 +80,12 @@ export default {
   methods: {
     key(node, index) {
       return node.id || index;
+    },
+    line(number) {
+      return {
+        rightLine: number === 1,
+        leftLine: number === this.data.children.length * 2,
+      };
     },
   },
 };
