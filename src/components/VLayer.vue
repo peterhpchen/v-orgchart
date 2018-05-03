@@ -84,7 +84,7 @@ export default {
     line(number) {
       return {
         rightLine: !this.isEven(number),
-        leftLine: number === this.data.children.length * 2,
+        leftLine: this.isEven(number),
       };
     },
     isEven(number){
