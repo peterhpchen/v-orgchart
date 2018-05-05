@@ -30,11 +30,6 @@ export default {
       required: true,
     },
   },
-  methods: {
-    key(node, index) {
-      return node.id || index;
-    },
-  },
 };
 </script>
 
