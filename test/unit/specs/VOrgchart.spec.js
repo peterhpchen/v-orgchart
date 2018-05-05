@@ -16,4 +16,29 @@ describe('VOrgchart.vue', () => {
 
     expect(wrapper.contains(VLayer)).toBeTruthy();
   });
+
+  it('matches snapshot', () => {
+    const node = {
+      name: 'A',
+      children: [
+        {
+          name: 'B',
+        },
+        {
+          name: 'C',
+        },
+        {
+          name: 'D',
+        },
+      ],
+    };
+
+    const wrapper = shallow(VOrgchart, {
+      propsData: {
+        data: node,
+      },
+    });
+
+    expect(wrapper.html()).toMatchSnapshot();
+  });
 });
