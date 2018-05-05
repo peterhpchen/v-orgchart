@@ -105,6 +105,10 @@ describe('VLayer.vue', () => {
       const NumOfVLayer = wrapper.findAll('tr:last-child.nodes > td > *').filter(w => w.find(VLayer).is(VLayer)).length;
       expect(NumOfVLayer).toBe(node.children.length);
     });
+
+    it('match snapshot', () => {
+      expect(wrapper.html()).toMatchSnapshot();
+    });
   });
 
   describe('given a data without children property', () => {

@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VLayer.vue given a data with children match snapshot 1`] = `
+<table class="v-layer">
+    <tr>
+        <td>
+            <!---->
+        </td>
+    </tr>
+    <tr class="lines">
+        <td>
+            <div class="downLine"></div>
+        </td>
+    </tr>
+    <tr class="lines">
+        <td class="rightLine"></td>
+        <td class="topLine leftLine"></td>
+        <td class="topLine rightLine"></td>
+        <td class="topLine leftLine"></td>
+        <td class="topLine rightLine"></td>
+        <td class="leftLine"></td>
+    </tr>
+    <tr class="nodes">
+        <td>
+            <table class="v-layer">
+                <tr>
+                    <td>
+                        <div class="node"></div>
+                    </td>
+                </tr>
+                <!---->
+            </table>
+        </td>
+        <td>
+            <table class="v-layer">
+                <tr>
+                    <td>
+                        <div class="node"></div>
+                    </td>
+                </tr>
+                <!---->
+            </table>
+        </td>
+        <td>
+            <table class="v-layer">
+                <tr>
+                    <td>
+                        <div class="node"></div>
+                    </td>
+                </tr>
+                <!---->
+            </table>
+        </td>
+    </tr>
+</table>
+`;
