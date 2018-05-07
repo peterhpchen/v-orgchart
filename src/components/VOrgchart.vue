@@ -1,19 +1,9 @@
-<template>
-  <div class="v-orgchart">
-    <v-layer
-      :data="data"
-    >
-      <template
-        slot-scope="_"
-      >
-        <slot
-          :data="_.data"
-        >
-          <div class="name">{{ _.data.name }}</div>
-        </slot>
-      </template>
-    </v-layer>
-  </div>
+<template lang="pug">
+  div.v-orgchart
+    v-layer(:data="data")
+      template(slot-scope="_")
+        slot(:data="_.data")
+          div.name {{ _.data.name }}
 </template>
 
 <script>
@@ -34,5 +24,4 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-
 </style>

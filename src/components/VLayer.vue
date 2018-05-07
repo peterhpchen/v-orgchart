@@ -1,61 +1,21 @@
-<template>
-  <table class="v-layer">
-    <tr>
-      <td>
-        <v-node
-          :data="data"
-        >
-          <template
-            slot-scope="_"
-          >
-            <slot
-              :data="_.data"
-            />
-          </template>
-        </v-node>
-      </td>
-    </tr>
-    <template
-      v-if="isHaveChild"
-    >
-      <tr
-        class="lines"
-      >
-        <td>
-          <div class="downLine"/>
-        </td>
-      </tr>
-      <tr
-        class="lines"
-      >
-        <td
-          v-for="n in data.children.length * 2"
-          :key="n"
-          :class="lineClassObject(n)"
-        />
-      </tr>
-      <tr
-        class="nodes"
-      >
-        <td
-          v-for="(node, index) in data.children"
-          :key="key(node, index)"
-        >
-          <v-layer
-            :data="node"
-          >
-            <template
-              slot-scope="_"
-            >
-              <slot
-                :data="_.data"
-              />
-            </template>
-          </v-layer>
-        </td>
-      </tr>
-    </template>
-  </table>
+<template lang="pug">
+  table.v-layer
+    tr
+      td
+        v-node(:data="data")
+          template(slot-scope="_")
+            slot(:data="_.data")
+    template(v-if="isHaveChild")
+      tr.lines
+        td
+          div.downLine
+      tr.lines
+        td(v-for="n in data.children.length * 2", :key="n", :class="lineClassObject(n)")
+      tr.nodes
+        td(v-for="(node, index) in data.children")
+          v-layer(:data="node")
+            template(slot-scope="_")
+              slot(:data="_.data")
 </template>
 
 <script>
@@ -83,19 +43,17 @@ export default {
     },
     lineClassObject(number) {
       return {
-        topLine: number != 1 && number != this.data.children.length * 2,
+        topLine: number !== 1 && number !== this.data.children.length * 2,
         rightLine: !this.isEven(number),
         leftLine: this.isEven(number),
       };
     },
-    isEven(number){
+    isEven(number) {
       return number % 2 === 0;
-    }
+    },
   },
 };
 </script>
 
 <style lang="postcss" scoped>
-
 </style>
-

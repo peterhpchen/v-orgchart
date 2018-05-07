@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     clickName(name) {
-      console.log(`click ${name}`);
+      console.log(`click ${name}`); // eslint-disable-line
     },
   },
 };

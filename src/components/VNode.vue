@@ -1,9 +1,6 @@
-<template>
-  <div class="node">
-    <slot
-      :data="data"
-    />
-  </div>
+<template lang="pug">
+  div.node
+    slot(:data="data")
 </template>
 
 <script>
@@ -19,5 +16,4 @@ export default {
 </script>
 
 <style>
-
 </style>
