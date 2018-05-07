@@ -10,9 +10,16 @@
         td
           div.downLine
       tr.lines
-        td(v-for="n in data.children.length * 2", :key="n", :class="lineClassObject(n)")
+        td(
+          v-for="n in data.children.length * 2"
+          :key="n"
+          :class="lineClassObject(n)"
+        )
       tr.nodes
-        td(v-for="(node, index) in data.children")
+        td(
+          v-for="(node, index) in data.children"
+          :key='key(node, index)'
+        )
           v-layer(:data="node")
             template(slot-scope="_")
               slot(:data="_.data")
