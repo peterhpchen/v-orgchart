@@ -12,7 +12,8 @@ describe('VNode.vue', () => {
         data: node,
       },
       scopedSlots: {
-        default: '<div class="name" slot-scope="slotProps">{{ slotProps.data.name }}</div>',
+        default:
+          '<div class="name" slot-scope="slotProps">{{ slotProps.data.name }}</div>',
       },
     });
     expect(wrapper.html()).toMatchSnapshot();
