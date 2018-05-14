@@ -1,13 +1,17 @@
 <template lang="pug">
   table.v-layer
     tr
-      td
+      td(
+          :colspan="layerColspan"
+      )
         v-node(:data="data")
           template(slot-scope="_")
             slot(:data="_.data")
     template(v-if="isHaveChild")
       tr.lines
-        td
+        td(
+          :colspan="layerColspan"
+        )
           div.downLine
       tr.lines
         td(
@@ -18,6 +22,7 @@
       tr.nodes
         td(
           v-for="(node, index) in data.children"
+          colspan="2"
           :key='key(node, index)'
         )
           v-layer(:data="node")
@@ -42,6 +47,9 @@ export default {
   computed: {
     isHaveChild() {
       return this.data.children && this.data.children.length > 0;
+    },
+    layerColspan() {
+      return this.isHaveChild ? this.data.children.length * 2 : false;
     },
   },
   methods: {
