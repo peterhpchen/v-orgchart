@@ -3,12 +3,12 @@
 exports[`VLayer.vue given a data with children match snapshot 1`] = `
 <table class="v-layer">
     <tr>
-        <td>
+        <td colspan="6">
             <!---->
         </td>
     </tr>
     <tr class="lines">
-        <td>
+        <td colspan="6">
             <div class="downLine"></div>
         </td>
     </tr>
@@ -21,7 +21,7 @@ exports[`VLayer.vue given a data with children match snapshot 1`] = `
         <td class="leftLine"></td>
     </tr>
     <tr class="nodes">
-        <td>
+        <td colspan="2">
             <table class="v-layer">
                 <tr>
                     <td>
@@ -31,7 +31,7 @@ exports[`VLayer.vue given a data with children match snapshot 1`] = `
                 <!---->
             </table>
         </td>
-        <td>
+        <td colspan="2">
             <table class="v-layer">
                 <tr>
                     <td>
@@ -41,7 +41,7 @@ exports[`VLayer.vue given a data with children match snapshot 1`] = `
                 <!---->
             </table>
         </td>
-        <td>
+        <td colspan="2">
             <table class="v-layer">
                 <tr>
                     <td>
