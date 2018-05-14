@@ -6,9 +6,9 @@
       <template
         slot-scope="slotProps"
       >
-        <div class="name">{{ slotProps.data.id }}</div>
+        <div class="title">{{ slotProps.data.id }}</div>
         <div
-          class="name"
+          class="content"
           @click="clickName(slotProps.data.name)">
           {{ slotProps.data.name }}
         </div>
@@ -61,5 +61,14 @@ export default {
 };
 </script>
 
-<style>
+<style lang="postcss" scoped>
+.title {
+  background-color: #35495e;
+  color: #ffffff;
+}
+
+.content {
+  background-color: #41b883;
+  color: #ffffff;
+}
 </style>
