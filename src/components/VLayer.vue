@@ -73,9 +73,44 @@ export default {
 <style lang="postcss" scoped>
 :root {
   --line-color: #8799a2;
+  --line-height: 20px;
+  --line-width: 2px;
 }
 
-.lines {
+table {
+  border-spacing: 0;
+}
+
+td {
+  text-align: center;
+  vertical-align: top;
+  padding: 0;
+}
+
+.downLine {
   background-color:  var(--line-color);
+  margin: 0 auto;
+  height: var(--line-height);
+  width: var(--line-width);
+  float: none;
+}
+
+.topLine {
+  border-top: var(--line-width) solid var(--line-color);
+  height: var(--line-height);
+}
+
+.rightLine {
+  border-right: calc(var(--line-width) / 2) solid var(--line-color);
+  height: var(--line-height);
+  float: none;
+  border-radius: 0;
+}
+
+.leftLine {
+  border-left: calc(var(--line-width) / 2) solid var(--line-color);
+  height: var(--line-height);
+  float: none;
+  border-radius: 0;
 }
 </style>

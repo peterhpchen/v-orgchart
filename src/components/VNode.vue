@@ -15,5 +15,11 @@ export default {
 };
 </script>
 
-<style>
+<style lang="postcss" scoped>
+.node {
+  display: inline-block;
+  padding: 3px;
+  width: 130px;
+}
 </style>
+

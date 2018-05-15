@@ -3,7 +3,8 @@
     v-layer(:data="data")
       template(slot-scope="_")
         slot(:data="_.data")
-          div.name {{ _.data.name }}
+          div.title {{ _.data.id }}
+          div.content {{ _.data.name }}
 </template>
 
 <script>
@@ -24,4 +25,20 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+:root {
+  --string-color: #ffffff;
+  --title-background-color: #35495e;
+  --content-background-color: #41b883;
+}
+
+.title {
+  color: var(--string-color);
+  background-color: var(--title-background-color);
+}
+
+.content {
+  color: var(--string-color);
+  background-color: var(--content-background-color);
+}
+
 </style>

@@ -8,18 +8,7 @@ storiesOf('VOrgchart', module).add('with children', () => ({
   <div id="app">
     <v-orgchart
       :data="data"
-    >
-      <template
-        slot-scope="slotProps"
-      >
-        <div class="title">{{ slotProps.data.id }}</div>
-        <div
-          class="content"
-          @click="clickName(slotProps.data.name)">
-          {{ slotProps.data.name }}
-        </div>
-      </template>
-    </v-orgchart>
+    />
   </div>
   `,
   data() {
