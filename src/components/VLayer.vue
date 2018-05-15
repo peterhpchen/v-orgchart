@@ -88,7 +88,7 @@ td {
 }
 
 .downLine {
-  background-color:  var(--line-color);
+  background-color: var(--line-color);
   margin: 0 auto;
   height: var(--line-height);
   width: var(--line-width);

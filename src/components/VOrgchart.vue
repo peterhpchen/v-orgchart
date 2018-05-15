@@ -40,5 +40,4 @@ export default {
   color: var(--string-color);
   background-color: var(--content-background-color);
 }
-
 </style>
