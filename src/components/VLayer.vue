@@ -71,4 +71,11 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+:root {
+  --line-color: #8799a2;
+}
+
+.lines {
+  background-color:  var(--line-color);
+}
 </style>
