@@ -51,5 +51,11 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     // use Prettier to handle comma issue
     'comma-dangle': 'off',
+    // use Prettier to handle semi issue
+    'semi': 'off',
+    // use Prettier to handle keyword-spacing issue
+    'keyword-spacing': 'off',
+    // set arrow-parens to always because it conflicts with Prettier
+    'arrow-parens': ['error', 'always'],
   }
 }
