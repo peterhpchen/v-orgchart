@@ -1,6 +1,6 @@
 <template lang="pug">
   div.v-orgchart
-    v-layer(:data="data")
+    v-layer(:data="nodeData")
       template(slot-scope="_")
         slot(:data="_.data")
           div.title {{ _.data.id }}
@@ -17,8 +17,29 @@ export default {
   },
   props: {
     data: {
-      type: Object,
+      type: [Object, Promise],
       required: true,
+    },
+  },
+  data() {
+    return {
+      nodeData: {},
+    };
+  },
+  watch: {
+    data: {
+      immediate: true,
+      handler(value) {
+        if (!(value instanceof Promise)) {
+          this.nodeData = this.data;
+          return;
+        }
+        const self = this;
+        value.then((res) => {
+          self.nodeData = res;
+          self.$emit('update:data', res);
+        });
+      },
     },
   },
 };
