@@ -1,4 +1,4 @@
-import { shallow } from '@vue/test-utils';
+import { shallow, mount } from '@vue/test-utils';
 import VOrgchart from '@/components/VOrgchart';
 import VLayer from '@/components/VLayer';
 
@@ -17,6 +17,40 @@ describe('VOrgchart.vue', () => {
     expect(wrapper.contains(VLayer)).toBeTruthy();
   });
 
+  it('has async data', (done) => {
+    const node = {
+      name: 'A',
+      children: [
+        {
+          name: 'B',
+        },
+        {
+          name: 'C',
+        },
+        {
+          name: 'D',
+        },
+      ],
+    };
+    const asyncData = new Promise((resolve) => {
+      resolve({ ...node });
+    });
+
+    const wrapper = mount(VOrgchart, {
+      propsData: {
+        data: asyncData,
+      },
+    });
+
+    const updateDataFunction = jest.fn();
+    wrapper.vm.$on('update:data', updateDataFunction);
+
+    wrapper.vm.$nextTick(() => {
+      expect(updateDataFunction).toHaveBeenCalledTimes(1);
+      done();
+    });
+  });
+
   it('matches snapshot', () => {
     const node = {
       name: 'A',
@@ -33,7 +67,7 @@ describe('VOrgchart.vue', () => {
       ],
     };
 
-    const wrapper = shallow(VOrgchart, {
+    const wrapper = mount(VOrgchart, {
       propsData: {
         data: node,
       },
