@@ -1,6 +1,10 @@
 <template lang="pug">
   div.v-orgchart
-    v-layer(:data="nodeData")
+    div(v-if="loading") Loading
+    v-layer(
+      v-else
+      :data="nodeData"
+    )
       template(slot-scope="_")
         slot(:data="_.data")
           div.title {{ _.data.id }}
@@ -24,6 +28,7 @@ export default {
   data() {
     return {
       nodeData: {},
+      loading: false,
     };
   },
   watch: {
@@ -34,10 +39,16 @@ export default {
           this.nodeData = this.data;
           return;
         }
+
         const self = this;
+
+        self.loading = true;
+
         value.then((res) => {
           self.nodeData = res;
           self.$emit('update:data', res);
+
+          self.loading = false;
         });
       },
     },

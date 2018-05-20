@@ -51,6 +51,34 @@ describe('VOrgchart.vue', () => {
     });
   });
 
+  it('has loading icon when the data is not got yet', () => {
+    const node = {
+      name: 'A',
+      children: [
+        {
+          name: 'B',
+        },
+        {
+          name: 'C',
+        },
+        {
+          name: 'D',
+        },
+      ],
+    };
+    const asyncData = new Promise((resolve) => {
+      resolve({ ...node });
+    });
+
+    const wrapper = mount(VOrgchart, {
+      propsData: {
+        data: asyncData,
+      },
+    });
+
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
   it('matches snapshot', () => {
     const node = {
       name: 'A',

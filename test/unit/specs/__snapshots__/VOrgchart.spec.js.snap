@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`VOrgchart.vue has loading icon when the data is not got yet 1`] = `
+<div class="v-orgchart">
+    <div>Loading</div>
+</div>
+`;
+
 exports[`VOrgchart.vue matches snapshot 1`] = `
 <div class="v-orgchart">
     <table class="v-layer">
