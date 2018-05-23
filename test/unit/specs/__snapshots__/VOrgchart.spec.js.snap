@@ -1,76 +1,84 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`VOrgchart.vue has loading icon when the data is not got yet 1`] = `
-<div class="v-orgchart">
-    <div>Loading</div>
+<div class="v-orgchart-container">
+    <div class="loader-container">
+        <div class="vue-icon">
+            <div class="triangle large"></div>
+            <div class="triangle middle"></div>
+            <div class="triangle short"></div>
+        </div>
+    </div>
 </div>
 `;
 
 exports[`VOrgchart.vue matches snapshot 1`] = `
-<div class="v-orgchart">
-    <table class="v-layer">
-        <tr>
-            <td colspan="6">
-                <div class="node">
-                    <div class="title"></div>
-                    <div class="content">A</div>
-                </div>
-            </td>
-        </tr>
-        <tr class="lines">
-            <td colspan="6">
-                <div class="downLine"></div>
-            </td>
-        </tr>
-        <tr class="lines">
-            <td class="rightLine"></td>
-            <td class="topLine leftLine"></td>
-            <td class="topLine rightLine"></td>
-            <td class="topLine leftLine"></td>
-            <td class="topLine rightLine"></td>
-            <td class="leftLine"></td>
-        </tr>
-        <tr class="nodes">
-            <td colspan="2">
-                <table class="v-layer">
-                    <tr>
-                        <td>
-                            <div class="node">
-                                <div class="title"></div>
-                                <div class="content">B</div>
-                            </div>
-                        </td>
-                    </tr>
-                    <!---->
-                </table>
-            </td>
-            <td colspan="2">
-                <table class="v-layer">
-                    <tr>
-                        <td>
-                            <div class="node">
-                                <div class="title"></div>
-                                <div class="content">C</div>
-                            </div>
-                        </td>
-                    </tr>
-                    <!---->
-                </table>
-            </td>
-            <td colspan="2">
-                <table class="v-layer">
-                    <tr>
-                        <td>
-                            <div class="node">
-                                <div class="title"></div>
-                                <div class="content">D</div>
-                            </div>
-                        </td>
-                    </tr>
-                    <!---->
-                </table>
-            </td>
-        </tr>
-    </table>
+<div class="v-orgchart-container">
+    <div class="v-orgchart">
+        <table class="v-layer">
+            <tr>
+                <td colspan="6">
+                    <div class="node">
+                        <div class="title"></div>
+                        <div class="content">A</div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="lines">
+                <td colspan="6">
+                    <div class="downLine"></div>
+                </td>
+            </tr>
+            <tr class="lines">
+                <td class="rightLine"></td>
+                <td class="topLine leftLine"></td>
+                <td class="topLine rightLine"></td>
+                <td class="topLine leftLine"></td>
+                <td class="topLine rightLine"></td>
+                <td class="leftLine"></td>
+            </tr>
+            <tr class="nodes">
+                <td colspan="2">
+                    <table class="v-layer">
+                        <tr>
+                            <td>
+                                <div class="node">
+                                    <div class="title"></div>
+                                    <div class="content">B</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <!---->
+                    </table>
+                </td>
+                <td colspan="2">
+                    <table class="v-layer">
+                        <tr>
+                            <td>
+                                <div class="node">
+                                    <div class="title"></div>
+                                    <div class="content">C</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <!---->
+                    </table>
+                </td>
+                <td colspan="2">
+                    <table class="v-layer">
+                        <tr>
+                            <td>
+                                <div class="node">
+                                    <div class="title"></div>
+                                    <div class="content">D</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <!---->
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
 </div>
 `;
