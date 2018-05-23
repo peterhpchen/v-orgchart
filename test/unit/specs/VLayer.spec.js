@@ -91,9 +91,9 @@ describe('VLayer.vue', () => {
         'tr:nth-child(3).lines > td:nth-child(odd)',
       );
 
-      expect(oddTd.filter(w => w.classes().includes('rightLine')).length).toBe(
-        oddTd.length,
-      );
+      expect(
+        oddTd.filter((w) => w.classes().includes('rightLine')).length,
+      ).toBe(oddTd.length);
     });
 
     it('has leftLine in the even td in the third row', () => {
@@ -101,9 +101,9 @@ describe('VLayer.vue', () => {
         'tr:nth-child(3).lines > td:nth-child(even)',
       );
 
-      expect(evenTd.filter(w => w.classes().includes('leftLine')).length).toBe(
-        evenTd.length,
-      );
+      expect(
+        evenTd.filter((w) => w.classes().includes('leftLine')).length,
+      ).toBe(evenTd.length);
     });
 
     it('has topLine except the first and the last td in the third row', () => {
@@ -124,7 +124,7 @@ describe('VLayer.vue', () => {
     it('has VLayer in the td of number of children in the last row', () => {
       const NumOfVLayer = wrapper
         .findAll('tr:last-child.nodes > td > *')
-        .filter(w => w.find(VLayer).is(VLayer)).length;
+        .filter((w) => w.find(VLayer).is(VLayer)).length;
       expect(NumOfVLayer).toBe(node.children.length);
     });
 
