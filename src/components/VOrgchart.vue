@@ -1,22 +1,25 @@
 <template lang="pug">
-  div.v-orgchart
-    div(v-if="loading") Loading
-    v-layer(
-      v-else
-      :data="nodeData"
-    )
-      template(slot-scope="_")
-        slot(:data="_.data")
-          div.title {{ _.data.id }}
-          div.content {{ _.data.name }}
+  div.v-orgchart-container
+    div.loader-container(v-if="loading")
+      v-loader
+    div.v-orgchart(v-else)
+      v-layer(
+        :data="nodeData"
+      )
+        template(slot-scope="_")
+          slot(:data="_.data")
+            div.title {{ _.data.id }}
+            div.content {{ _.data.name }}
 </template>
 
 <script>
+import VLoader from './VLoader';
 import VLayer from './VLayer';
 
 export default {
   name: 'VOrgchart',
   components: {
+    VLoader,
     VLayer,
   },
   props: {
@@ -61,6 +64,10 @@ export default {
   --string-color: #ffffff;
   --title-background-color: #35495e;
   --content-background-color: #41b883;
+}
+
+.loader-container {
+  margin: 52px;
 }
 
 .title {

@@ -79,6 +79,7 @@ export default {
 
 table {
   border-spacing: 0;
+  margin: auto;
 }
 
 td {
