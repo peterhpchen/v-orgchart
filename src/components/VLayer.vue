@@ -4,7 +4,10 @@
       td(
           :colspan="layerColspan"
       )
-        v-node(:data="data")
+        v-node(
+          :data="data"
+          :direction="direction"
+        )
           template(slot-scope="_")
             slot(:data="_.data")
     template(v-if="isHaveChild")
@@ -25,7 +28,10 @@
           colspan="2"
           :key='key(node, index)'
         )
-          v-layer(:data="node")
+          v-layer(
+            :data="node"
+            :direction="direction"
+          )
             template(slot-scope="_")
               slot(:data="_.data")
 </template>
@@ -42,6 +48,10 @@ export default {
     data: {
       type: Object,
       required: true,
+    },
+    direction: {
+      type: String,
+      default: 't2b',
     },
   },
   computed: {

@@ -1,5 +1,7 @@
 <template lang="pug">
-  div.node
+  div.node(
+    :class="direction"
+  )
     slot(:data="data")
 </template>
 
@@ -11,6 +13,10 @@ export default {
       type: Object,
       required: true,
     },
+    direction: {
+      type: String,
+      default: 't2b',
+    },
   },
 };
 </script>
@@ -20,5 +26,9 @@ export default {
   display: inline-block;
   padding: 3px;
   width: 130px;
+
+  &.b2t {
+    transform: rotate(180deg);
+  }
 }
 </style>

@@ -1,10 +1,13 @@
 <template lang="pug">
-  div.v-orgchart-container
+  div.v-orgchart-container(
+    :class="direction"
+  )
     div.loader-container(v-if="loading")
       v-loader
     div.v-orgchart(v-else)
       v-layer(
         :data="nodeData"
+        :direction="direction"
       )
         template(slot-scope="_")
           slot(:data="_.data")
@@ -26,6 +29,10 @@ export default {
     data: {
       type: [Object, Promise],
       required: true,
+    },
+    direction: {
+      type: String,
+      default: 't2b',
     },
   },
   data() {
@@ -64,6 +71,12 @@ export default {
   --string-color: #ffffff;
   --title-background-color: #35495e;
   --content-background-color: #41b883;
+}
+
+.v-orgchart-container {
+  &.b2t {
+    transform: rotate(180deg);
+  }
 }
 
 .loader-container {
